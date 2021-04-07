@@ -6,14 +6,15 @@
  2. Mysql create schema
  
  3. application.properties
-    server.port=8081
-    spring.jpa.hibernate.ddl-auto=update
-    spring.datasource.url=jdbc:mysql://localhost:3306/listings_schema?useSSL=false
-    #spring.datasource.url=jdbc:mysql://34.67.27.190:3306/listings_schema?useSSL=false
-    spring.datasource.username=raki
-    spring.datasource.password=mysql100
-    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
-    ##spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+ 
+    > server.port=8081
+    > spring.jpa.hibernate.ddl-auto=update
+    > spring.datasource.url=jdbc:mysql://localhost:3306/listings_schema?useSSL=false
+    > #spring.datasource.url=jdbc:mysql://34.67.27.190:3306/listings_schema?useSSL=false
+    > spring.datasource.username=raki
+    > spring.datasource.password=mysql100
+    > spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+    > ##spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
     
     application-docker.properties
     server.port=8081
