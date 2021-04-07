@@ -1,0 +1,43 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: craftdemo
+  labels:
+    name: craftdemo
+spec:
+  ports:
+    - nodePort: 30019
+      port: 3913
+      targetPort: 3913
+      protocol: TCP
+  selector:
+    app: craftdemo
+  type: NodePort
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: craftdemo
+spec:
+  selector:
+    matchLabels:
+      app: craftdemo
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: craftdemo
+    spec:
+      containers:
+        - name: craftdemo
+          image: craftdemo:1.0
+          env:
+            - name: PROFILE
+              value: minikube
+          ports:
+            - containerPort: 3913
+      hostAliases:
+        - ip: 192.168.64.1
+          hostnames:
+            - host.minikube.internal
