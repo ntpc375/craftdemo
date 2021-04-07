@@ -8,6 +8,7 @@
  3. application.properties
  
     > server.port=8081
+    > 
     > spring.jpa.hibernate.ddl-auto=update
     > spring.datasource.url=jdbc:mysql://localhost:3306/listings_schema?useSSL=false
     > #spring.datasource.url=jdbc:mysql://34.67.27.190:3306/listings_schema?useSSL=false
